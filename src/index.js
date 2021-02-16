@@ -1,5 +1,8 @@
 import project from './scripts/project';
-import displayHeader from './scripts/dom';
+import createHeader from './scripts/dom';
 
 const projects = [];
-displayHeader();
+
+const contentDiv = document.querySelector('#content');
+createHeader()
+//contentDiv.appendChild(createHeader);

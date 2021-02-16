@@ -1,3 +1,5 @@
+import createModal from './modalAddProject';
+
 function setAttributes(elt, attrs) {
   const props = Object.keys(attrs);
   props.forEach(prop => {
@@ -5,7 +7,7 @@ function setAttributes(elt, attrs) {
   });
 }
 
-function createHeader() {
+export function createHeader() {
   const wrapperDiv = document.createElement('header');
   const h2 = document.createElement('h2');
   const addProjectButton = document.createElement('button');
@@ -25,5 +27,6 @@ function createHeader() {
 export default function displayHeader() {
   const contentDiv = document.querySelector('#content');
   const header = createHeader();
-  contentDiv.appendChild(header);
+  const modal = createModal();
+  contentDiv.append(header, modal);
 }
