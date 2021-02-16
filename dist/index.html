@@ -1,140 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
     <title>TODO List</title>
-</head>
-<body class="bg-test">
-    <div id="content">
-        
-    </div>
+  </head>
+  <body class="bg-test">
+    <div id="content"></div>
 
     <div class="container">
-        <div class="pt-5 d-flex justify-content-between">
-            <h2 class="text-secondary">TODO List - JavaScript</h2>
-            <button class="btn btn-danger btn-lg shadow" data-bs-toggle="modal" data-bs-target="#addProject">Add project</button>
+      <div class="pt-5 d-flex justify-content-between">
+        <h2 class="text-secondary">TODO List - JavaScript</h2>
+        <button
+          class="btn btn-danger btn-lg shadow"
+          data-bs-toggle="modal"
+          data-bs-target="#addProject"
+        >
+          Add project
+        </button>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="addProject"
+          tabindex="-1"
+          aria-labelledby="exMl"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exMl">Add project</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body g-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Add the title here"
+                />
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Save project
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 pt-5">
+          <div class="card shadow">
+            <div
+              class="card-header text-white bg-dark d-flex justify-content-between pt-3"
+            >
+              <h6>Backlog</h6>
+              <div>
+                <a
+                  href="#"
+                  class="text-light"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addProject"
+                  ><i class="fas fa-edit mx-3"></i
+                ></a>
+                <i class="fas fa-trash mx-3"></i>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="mt-3">
+                <div class="card bg-test shadow">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="card-title">Task 1</h5>
+                      <div>
+                        <i class="fas fa-edit mx-3 text-info"></i>
+                        <i class="fas fa-trash mx-3 text-danger"></i>
+                      </div>
+                    </div>
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                    <p class="card-text">
+                      Some quick example text to build on the card title
+                    </p>
+                    <p class="card-text">
+                      <small class="text-muted">Due on 2 feb 2020</small>
+                    </p>
+
+                    <div
+                      class="accordion accordion-flush"
+                      id="accordionFlushExample"
+                    >
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne"
+                            aria-expanded="false"
+                            aria-controls="flush-collapseOne"
+                          >
+                            View details
+                          </button>
+                        </h2>
+                        <div
+                          id="flush-collapseOne"
+                          class="accordion-collapse collapse pt-3"
+                          aria-labelledby="flush-headingOne"
+                          data-bs-parent="#accordionFlushExample"
+                        >
+                          <div class="d-flex justify-content-between mt-2">
+                            <div>
+                              <i class="fas fa-bars"></i>
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="checklist-item-4"
+                              />
+                              <b>List 2</b>
+                            </div>
+                            <i class="fas fa-times-circle text-danger"></i>
+                          </div>
+                          <div class="d-flex justify-content-between mt-2">
+                            <div>
+                              <i class="fas fa-bars"></i>
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="checklist-item-4"
+                              />
+                              <b>List 2</b>
+                            </div>
+                            <i class="fas fa-times-circle text-danger"></i>
+                          </div>
+
+                          <div class="d-flex justify-content-between mt-2">
+                            <div>
+                              <i class="fas fa-plus"></i>
+                              <a href="#" class="btn-link">Add item</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer d-grid gap-2">
+              <button
+                class="btn btn-primary text-light shadow"
+                data-bs-toggle="modal"
+                data-bs-target="#addTask"
+              >
+                Add task
+              </button>
+            </div>
             <!-- Modal -->
-            <div class="modal fade" id="addProject" tabindex="-1" aria-labelledby="exMl" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exMl">Add project</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body g-3">
-                            <input type="text" class="form-control" placeholder="Add the title here">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save project</button>
-                        </div>
-                    </div>
+            <div
+              class="modal fade"
+              id="addTask"
+              tabindex="-1"
+              aria-labelledby="exMlTask"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exMlTask">Add Task</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body g-3">
+                    <input
+                      type="text"
+                      class="form-control mb-3"
+                      placeholder="Add the Task title here"
+                    />
+                    <textarea
+                      class="form-control mb-3"
+                      rows="3"
+                      placeholder="Add details here"
+                    ></textarea>
+                    <select
+                      class="form-select mb-3"
+                      aria-label="Choose your priority"
+                    >
+                      <option selected>Choose your priority</option>
+                      <option value="1">Low</option>
+                      <option value="2">Medium</option>
+                      <option value="3">High</option>
+                    </select>
+                    <input
+                      type="date"
+                      class="form-control mb-3"
+                      placeholder="Add the date"
+                    />
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                      Save task
+                    </button>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-4 pt-5">
-                <div class="card shadow">
-                    <div class="card-header text-white bg-dark d-flex justify-content-between pt-3">
-                        <h6>Backlog</h6>
-                        <div>
-                            
-                            <a href="#" class="text-light" data-bs-toggle="modal" data-bs-target="#addProject"><i class="fas fa-edit mx-3"></i></a>
-                            <i class="fas fa-trash mx-3"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="mt-3">
-                            <div class="card bg-test shadow">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between">
-                                        <h5 class="card-title">Task 1</h5>
-                                        <div>
-                                            <i class="fas fa-edit mx-3 text-info"></i>
-                                            <i class="fas fa-trash mx-3 text-danger"></i>
-                                        </div>
-                                    </div>
-                                    <span class="badge rounded-pill bg-danger">Danger</span>
-                                    <p class="card-text">Some quick example text to build on the card title</p>
-                                    <p class="card-text"><small class="text-muted">Due on 2 feb 2020</small></p>
-
-                                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="flush-headingOne">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                                View details
-                                                </button>
-                                            </h2>
-                                            <div id="flush-collapseOne" class="accordion-collapse collapse pt-3" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                                <div class="d-flex justify-content-between mt-2">
-                                                    <div>
-                                                        <i class="fas fa-bars"></i>
-                                                        <input type="checkbox" class="custom-control-input" id="checklist-item-4">
-                                                        <b>List 2</b>
-                                                    </div>
-                                                    <i class="fas fa-times-circle text-danger"></i>
-                                                </div> 
-                                                <div class="d-flex justify-content-between mt-2">
-                                                    <div>
-                                                        <i class="fas fa-bars"></i>
-                                                        <input type="checkbox" class="custom-control-input" id="checklist-item-4">
-                                                        <b>List 2</b>
-                                                    </div>
-                                                    <i class="fas fa-times-circle text-danger"></i>
-                                                </div>
-
-                                                <div class="d-flex justify-content-between mt-2">
-                                                    <div>
-                                                        <i class="fas fa-plus"></i>
-                                                        <a href="#" class="btn-link">Add item</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer d-grid gap-2">
-                        <button class="btn btn-primary text-light shadow" data-bs-toggle="modal" data-bs-target="#addTask">Add task</button>
-                    </div>
-                    <!-- Modal -->
-                    <div class="modal fade" id="addTask" tabindex="-1" aria-labelledby="exMlTask" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exMlTask">Add Task</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body g-3">
-                                    <input type="text" class="form-control mb-3" placeholder="Add the Task title here">
-                                    <textarea class="form-control mb-3" rows="3" placeholder="Add details here"></textarea>
-                                    <select class="form-select mb-3" aria-label="Choose your priority">
-                                        <option selected>Choose your priority</option>
-                                        <option value="1">Low</option>
-                                        <option value="2">Medium</option>
-                                        <option value="3">High</option>
-                                    </select>
-                                    <input type="date" class="form-control mb-3" placeholder="Add the date">
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save task</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
     <script src="./main.js"></script>
-    <script src="https://kit.fontawesome.com/1ba545dca5.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
-</body>
+    <script
+      src="https://kit.fontawesome.com/1ba545dca5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
