@@ -1,4 +1,5 @@
 import setAttributes from './setAttributes';
+import displayTask from './taskMarkup';
 
 export default function displayProject(projectId, projectTitle){
     const wrapperProject = document.createElement('div');
@@ -35,6 +36,14 @@ export default function displayProject(projectId, projectTitle){
 
     const projectBody = document.createElement('div');
     projectBody.className = 'card-body';
+
+    //Append tasks here
+    const task1 = displayTask( '1', "task Title 1", "Here task Details", "Nov, 2nd 2020", "high");
+    const task2 = displayTask( '2', "task Title 2", "Here SEcond task Details", "Nov, 2nd 2020", "high");
+
+    projectBody.append(task1, task2);
+
+
     
     const projectFooter = document.createElement('div');
     projectFooter.className = 'card-footer d-grid gap-2';
@@ -42,7 +51,6 @@ export default function displayProject(projectId, projectTitle){
     const btnAddTask = document.createElement('button');
     setAttributes(btnAddTask, { class: 'btn btn-primary text-light shadow', type: 'button', id: 'save-task' });
     btnAddTask.innerHTML = 'Add task';
-
 
     modalEditIcon.appendChild(editIcon);
     modalDeleteIcon.appendChild(deleteIcon);
