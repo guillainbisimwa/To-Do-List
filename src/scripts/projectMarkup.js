@@ -1,6 +1,19 @@
 import setAttributes from './setAttributes';
 import displayTask from './taskMarkup';
 
+function allProjectTasks(tasksList) {
+  const tasksContainer = document.createElement('div');
+
+  tasksList.forEach(task => {
+    const {
+      title, description, priority, date,
+    } = task;
+    const markup = displayTask(title, description, priority, date);
+    tasksContainer.appendChild(markup);
+  });
+  return tasksContainer;
+}
+
 export default function displayProject(projectId, projectTitle) {
   const wrapperProject = document.createElement('div');
   setAttributes(wrapperProject, {
@@ -38,9 +51,9 @@ export default function displayProject(projectId, projectTitle) {
   projectBody.className = 'card-body';
 
   // Append tasks here
-  const task1 = displayTask('1', 'task Title 1', 'Here task Details', 'Nov, 2nd 2020', 'high');
+  const allTasks = allProjectTasks();
 
-  projectBody.appendChild(task1);
+  projectBody.appendChild(allTasks);
 
   const projectFooter = document.createElement('div');
   projectFooter.className = 'card-footer d-grid gap-2';
