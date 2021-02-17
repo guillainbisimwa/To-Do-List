@@ -36,6 +36,7 @@ export default function displayTask(taskId, taskTitle, taskDetails, taskDate, ta
 
     const priority = document.createElement('span');
     priority.className = 'badge rounded-pill bg-danger';
+    priority.innerHTML = taskPriority;
 
     const details = document.createElement('p');
     details.className = 'card-text';
@@ -60,7 +61,7 @@ export default function displayTask(taskId, taskTitle, taskDetails, taskDate, ta
 
     const accordionTitle = document.createElement('h2');
     setAttributes(accordionTitle, {
-        class: 'accordion-header', id: 'flush'+taskId
+        class: 'accordion-header', id: 'flush-heading'+taskId
     });
 
     const accordionButton = document.createElement('button');
@@ -98,14 +99,18 @@ export default function displayTask(taskId, taskTitle, taskDetails, taskDate, ta
     accordionWrapper.appendChild(accordionItem);
 
     modalEditIcon.appendChild(editIcon);
-    
+
     modalDeleteIcon.appendChild(deleteIcon);
 
     wripperIcons.append(modalEditIcon, modalDeleteIcon);
 
     cardTaskTitleWrapper.append(cardTaskTitle, wripperIcons);
 
-    cardTaskBody.append(cardTaskTitleWrapper, priority, details, date, addItemWrapper);
+    cardTaskBody.append(cardTaskTitleWrapper, priority, details, date, accordionWrapper);
 
-    return cardTaskBody;
+    cardTask.appendChild(cardTaskBody);
+
+    wrapperTask.appendChild(cardTask);
+
+    return wrapperTask;
 }

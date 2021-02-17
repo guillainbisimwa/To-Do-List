@@ -39,17 +39,15 @@ export default function displayProject(projectId, projectTitle){
 
     //Append tasks here
     const task1 = displayTask( '1', "task Title 1", "Here task Details", "Nov, 2nd 2020", "high");
-    const task2 = displayTask( '2', "task Title 2", "Here SEcond task Details", "Nov, 2nd 2020", "high");
+    const task2 = displayTask( '2', "task Title 2", "Here SEcond task Details", "Nov, 2nd 2020", "medium");
 
-    projectBody.append(task1, task2);
+    projectBody.appendChild(task1);
 
-
-    
     const projectFooter = document.createElement('div');
     projectFooter.className = 'card-footer d-grid gap-2';
 
     const btnAddTask = document.createElement('button');
-    setAttributes(btnAddTask, { class: 'btn btn-primary text-light shadow', type: 'button', id: 'save-task' });
+    setAttributes(btnAddTask, { class: 'btn btn-primary text-light shadow', type: 'button', id: 'save-task', 'data-bs-toggle': 'modal', 'data-bs-target':"#addTask" });
     btnAddTask.innerHTML = 'Add task';
 
     modalEditIcon.appendChild(editIcon);
