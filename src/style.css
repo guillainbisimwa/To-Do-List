@@ -6,3 +6,7 @@
 .bg-test {
   background: #f8f9fa;
 }
+
+.c-pointer {
+  cursor: pointer;
+}
