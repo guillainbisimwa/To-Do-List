@@ -22,7 +22,9 @@ export default function createModal() {
   modalBody.className = 'modal-body';
 
   const inputTitleProject = document.createElement('input');
-  setAttributes(inputTitleProject, { class: 'form-control', type: 'text', placeholder: 'Add the title here' });
+  setAttributes(inputTitleProject, {
+    class: 'form-control', id: 'project-title-input', type: 'text', placeholder: 'Add the title here',
+  });
 
   const modalFooter = document.createElement('div');
   modalFooter.className = 'modal-footer';

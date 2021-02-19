@@ -1,8 +1,4 @@
-import createHeader from './scripts/dom';
+import render from './scripts/dom';
+import './style.css';
 
-require('./style.css');
-
-const projects = [];
-
-createHeader();
-// contentDiv.appendChild(createHeader);
+render();

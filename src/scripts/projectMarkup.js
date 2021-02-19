@@ -3,7 +3,7 @@ import displayTask from './taskMarkup';
 
 function allProjectTasks(tasksList) {
   const tasksContainer = document.createElement('div');
-
+  console.log(tasksList);
   tasksList.forEach(task => {
     const {
       title, description, priority, date,
@@ -14,7 +14,7 @@ function allProjectTasks(tasksList) {
   return tasksContainer;
 }
 
-export default function displayProject(projectId, projectTitle) {
+export default function displayProject(projectId, project) {
   const wrapperProject = document.createElement('div');
   setAttributes(wrapperProject, {
     class: 'col-xs-12 col-sm-6 col-md-4 pt-5', id: projectId, 'data-index': projectId,
@@ -27,7 +27,7 @@ export default function displayProject(projectId, projectTitle) {
   projectHeader.className = 'card-header text-white bg-dark d-flex justify-content-between pt-3';
 
   const projectHeaderTitle = document.createElement('h6');
-  projectHeaderTitle.textContent = projectTitle;
+  projectHeaderTitle.textContent = project.title;
 
   const wraperIcon = document.createElement('div');
 
@@ -51,7 +51,8 @@ export default function displayProject(projectId, projectTitle) {
   projectBody.className = 'card-body';
 
   // Append tasks here
-  const allTasks = allProjectTasks();
+  console.log(project.tasksList);
+  const allTasks = allProjectTasks(project.tasksList);
 
   projectBody.appendChild(allTasks);
 
