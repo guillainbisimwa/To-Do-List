@@ -17,8 +17,12 @@ function handleGeneratingNewInstance() {
     console.log(projects);
     projects.push(newProjectInstance);
     cleanForm([projectTitleInput]);
-    // const bbtn = document.querySelector('#addProject');
-    // bbtn.classList.remove('show');
+
+    var myModalEl = document.getElementById('addProject');
+    var modal = bootstrap.Modal.getInstance(myModalEl);
+      
+    modal.hide();
+
     allProjectsMarkup(projects);
   }
 }
