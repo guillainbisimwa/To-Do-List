@@ -1,4 +1,4 @@
-import render from './scripts/dom';
+import render from './scripts/dom-handlers/dom';
 import './style.css';
 
 render();

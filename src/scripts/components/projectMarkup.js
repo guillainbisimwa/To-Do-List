@@ -1,4 +1,4 @@
-import setAttributes from './setAttributes';
+import setAttributes from '../setAttributes';
 import displayTask from './taskMarkup';
 
 function allProjectTasks(tasksList) {

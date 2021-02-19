@@ -1,6 +1,6 @@
-import createHeader from './header';
-import createModal from './modalAddProject';
-import setAttributes from './setAttributes';
+import createHeader from '../components/header';
+import createModal from '../components/modalAddProject';
+import setAttributes from '../setAttributes';
 import { addProject } from './addProject';
 
 export default function render() {

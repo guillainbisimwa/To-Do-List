@@ -1,4 +1,4 @@
-import displayProject from './projectMarkup';
+import displayProject from '../components/projectMarkup';
 
 function cleanProjectsDisplay() {
   const projectsWrapper = document.querySelector('#projects-wrapper');

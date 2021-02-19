@@ -1,4 +1,4 @@
-import setAttributes from './setAttributes';
+import setAttributes from '../setAttributes';
 
 export default function displayTask(taskId, taskTitle, taskDetails, taskDate, taskPriority) {
   const wrapperTask = document.createElement('div');

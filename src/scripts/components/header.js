@@ -1,4 +1,4 @@
-import setAttributes from './setAttributes';
+import setAttributes from '../setAttributes';
 
 export default function createHeader() {
   const wrapperDiv = document.createElement('header');

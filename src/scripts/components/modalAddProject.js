@@ -1,4 +1,4 @@
-import setAttributes from './setAttributes';
+import setAttributes from '../setAttributes';
 
 export default function createModal() {
   const wrapperModal = document.createElement('div');

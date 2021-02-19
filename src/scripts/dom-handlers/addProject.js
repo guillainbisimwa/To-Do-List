@@ -1,4 +1,4 @@
-import newProject from './project';
+import newProject from '../project';
 import allProjectsMarkup from './renderProjects';
 
 const projects = [];
