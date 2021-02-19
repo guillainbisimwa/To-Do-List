@@ -1,5 +1,5 @@
-import createHeader from '../components/header';
-import createModal from '../components/modalAddProject';
+import createHeader from '../components/headerComponent';
+import createModal from '../components/modalComponent';
 import setAttributes from '../setAttributes';
 import { addProject } from './addProject';
 

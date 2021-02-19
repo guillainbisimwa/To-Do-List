@@ -1,5 +1,5 @@
 import setAttributes from '../setAttributes';
-import displayTask from './taskMarkup';
+import displayTask from './taskComponent';
 
 function allProjectTasks(tasksList) {
   const tasksContainer = document.createElement('div');
