@@ -17,7 +17,7 @@ function allProjectTasks(tasksList) {
 export default function displayProject(projectId, project) {
   const wrapperProject = document.createElement('div');
   setAttributes(wrapperProject, {
-    class: 'col-xs-12 col-sm-6 col-md-4 pt-5', id: projectId, 'data-index': projectId,
+    class: 'col-xs-12 col-sm-6 col-md-4 pt-5', id: `project-${projectId}` , 'data-index': projectId,
   });
 
   const card = document.createElement('div');
@@ -33,7 +33,7 @@ export default function displayProject(projectId, project) {
 
   const modalEditIcon = document.createElement('a');
   setAttributes(modalEditIcon, {
-    class: 'text-light c-pointer', 'data-bs-toggle': 'modal', 'data-bs-target': '#addProject',
+    class: 'text-light c-pointer editProject', id: `editProject-${projectId}`, 'data-index': projectId
   });
 
   const modalDeleteIcon = document.createElement('a');
