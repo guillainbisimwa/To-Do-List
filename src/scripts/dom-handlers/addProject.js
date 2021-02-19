@@ -17,6 +17,8 @@ function handleGeneratingNewInstance() {
     console.log(projects);
     projects.push(newProjectInstance);
     cleanForm([projectTitleInput]);
+    // const bbtn = document.querySelector('#addProject');
+    // bbtn.classList.remove('show');
     allProjectsMarkup(projects);
   }
 }
