@@ -1,7 +1,9 @@
 import createHeader from '../components/headerComponent';
 import createModal from '../components/modalComponent';
 import setAttributes from '../setAttributes';
-import { addProject } from './addProject';
+import { projects, addProject } from './addProject';
+import editProject from './editProject';
+import allProjectsMarkup from './renderProjects';
 
 export default function render() {
   const contentDiv = document.querySelector('#content');
@@ -12,5 +14,5 @@ export default function render() {
   setAttributes(wrapperDiv, { class: 'row', id: 'projects-wrapper' });
 
   contentDiv.append(header, modal, wrapperDiv);
-  addProject();
+  allProjectsMarkup(projects);
 }

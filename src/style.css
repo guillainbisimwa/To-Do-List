@@ -10,3 +10,7 @@
 .c-pointer {
   cursor: pointer;
 }
+
+.hide {
+  display: none;
+}

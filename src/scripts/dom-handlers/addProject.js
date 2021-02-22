@@ -1,7 +1,6 @@
 import newProject from '../project';
-import allProjectsMarkup from './renderProjects';
-//import { editProject } from './editProject';
-
+import render from './render';
+// import { editProject } from './editProject';
 
 const projects = [];
 
@@ -16,16 +15,16 @@ function handleGeneratingNewInstance() {
   if (projectTitleInput.value.trim().length > 1) {
     const newProjectInstance = newProject(projectTitleInput.value);
     projects.push(newProjectInstance);
-    cleanForm([projectTitleInput]);
+    // cleanForm([projectTitleInput]);
 
-    var myModalEl = document.getElementById('addProject');
-    var modal = bootstrap.Modal.getInstance(myModalEl);
+    const myModalEl = document.getElementById('addProject');
+    const modal = bootstrap.Modal.getInstance(myModalEl);
 
     modal.hide();
-    allProjectsMarkup(projects);
-    //editProject();
-  }
-  else{
+    // allProjectsMarkup(projects);
+    // // editProject();
+    render();
+  } else {
     projectTitleInput.className = 'form-control is-invalid was-validated';
   }
 }

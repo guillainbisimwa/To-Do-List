@@ -8,10 +8,10 @@ export default function createModal() {
 
   const modalHeader = document.createElement('div');
   modalHeader.className = 'modal-header';
-  modalHeader.innerHTML = 'Add Project';
 
   const titleHeader = document.createElement('h5');
   setAttributes(titleHeader, { class: 'modal-title', id: 'exMl' });
+  titleHeader.innerHTML = 'Add Project';
 
   const btnHeader = document.createElement('button');
   setAttributes(btnHeader, {
@@ -37,6 +37,10 @@ export default function createModal() {
   setAttributes(btnSave, { class: 'btn btn-primary', type: 'button', id: 'save-btn' });
   btnSave.innerHTML = 'Save Project';
 
+  const btnUpdate = document.createElement('button');
+  setAttributes(btnUpdate, { class: 'btn btn-primary hide', type: 'button', id: 'update-btn' });
+  btnUpdate.innerHTML = 'Edit Project';
+
   const modalContent = document.createElement('div');
   modalContent.className = 'modal-content';
 
@@ -47,7 +51,7 @@ export default function createModal() {
 
   modalBody.appendChild(inputTitleProject);
 
-  modalFooter.append(btnClose, btnSave);
+  modalFooter.append(btnClose, btnSave, btnUpdate);
 
   modalContent.append(modalHeader, modalBody, modalFooter);
 
