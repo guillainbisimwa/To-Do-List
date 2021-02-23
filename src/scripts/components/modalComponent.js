@@ -1,6 +1,7 @@
 import setAttributes from '../setAttributes';
 
-export default function createModal() {
+
+export function addProjectModal() {
   const wrapperModal = document.createElement('div');
   setAttributes(wrapperModal, {
     class: 'modal fade', id: 'addProject', tabindex: '-1', 'aria-labelledby': 'exMl', 'aria-hidden': 'true',
@@ -52,6 +53,66 @@ export default function createModal() {
   modalBody.appendChild(inputTitleProject);
 
   modalFooter.append(btnClose, btnSave, btnUpdate);
+
+  modalContent.append(modalHeader, modalBody, modalFooter);
+
+  modalDialog.appendChild(modalContent);
+
+  wrapperModal.appendChild(modalDialog);
+
+  return wrapperModal;
+}
+
+export function deleteProjectModal(){
+  const wrapperModal = document.createElement('div');
+  setAttributes(wrapperModal, {
+    class: 'modal fade', id: 'delProject', tabindex: '-1', 'aria-labelledby': 'exMlDel', 'aria-hidden': 'true'
+  });
+
+  const modalHeader = document.createElement('div');
+  modalHeader.className = 'modal-header';
+
+  const titleHeader = document.createElement('h5');
+  setAttributes(titleHeader, { class: 'modal-title', id: 'exMlDel' });
+  titleHeader.innerHTML = 'Delete Project';
+
+  const btnHeader = document.createElement('button');
+  setAttributes(btnHeader, {
+    class: 'btn-close', type: 'button', 'ta-bs-dismiss': 'modal', 'aria-label': 'Close',
+  });
+
+  const modalBody = document.createElement('div');
+  modalBody.className = 'modal-body';
+
+  const confirmTitleProject = document.createElement('h4');
+  setAttributes(confirmTitleProject, {
+    class: 'alert alert-danger', id: 'project-title-confirm', role: 'alert',
+  });
+
+  confirmTitleProject.innerHTML = "Do you want to delete this project?";
+
+  const modalFooter = document.createElement('div');
+  modalFooter.className = 'modal-footer';
+
+  const btnClose = document.createElement('button');
+  setAttributes(btnClose, { class: 'btn btn-secondary', type: 'button', 'data-bs-dismiss': 'modal' });
+  btnClose.innerHTML = 'Close';
+
+  const btnDelete = document.createElement('button');
+  setAttributes(btnDelete, { class: 'btn btn-danger', type: 'button', id: 'delBtn' });
+  btnDelete.innerHTML = 'Delete project';
+
+  const modalContent = document.createElement('div');
+  modalContent.className = 'modal-content';
+
+  const modalDialog = document.createElement('div');
+  modalDialog.className = 'modal-dialog';
+
+  modalHeader.appendChild(titleHeader, btnHeader);
+
+  modalBody.appendChild(confirmTitleProject);
+
+  modalFooter.append(btnClose, btnDelete);
 
   modalContent.append(modalHeader, modalBody, modalFooter);
 

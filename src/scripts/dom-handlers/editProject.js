@@ -1,4 +1,3 @@
-import newProject from '../project';
 import { projects } from './addProject';
 import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';
@@ -9,7 +8,7 @@ function handleEditingProject(event) {
 
   const myModalEl = document.getElementById('addProject');
   const modal = bootstrap.Modal.getInstance(myModalEl);
-  
+
   // Modify the title as well as the placeholder text
   const header = document.querySelector('#exMl');
   header.innerHTML = 'Edit Project';
@@ -24,7 +23,6 @@ function handleEditingProject(event) {
   newTitle.value = projects[correspondingIndex].title;
 
   modal.show();
-
 }
 
 export default function editProject() {
@@ -44,9 +42,7 @@ export function handleUpdateProject(){
   
     projects[correspondingIndex].title = newTitle.value;
     allProjectsMarkup(projects);
-    console.log(correspondingIndex);
 
-    console.log(projects);
     const myModalEl = document.getElementById('addProject');
     const modal = bootstrap.Modal.getInstance(myModalEl);
     modal.hide();

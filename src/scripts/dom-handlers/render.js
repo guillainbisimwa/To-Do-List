@@ -1,21 +1,23 @@
 import createHeader from '../components/headerComponent';
-import createModal from '../components/modalComponent';
+import { deleteProjectModal, addProjectModal } from '../components/modalComponent';
 import setAttributes from '../setAttributes';
 import { projects, addProject } from './addProject';
-import { editProject, handleUpdateProject } from './editProject';
+import { handleUpdateProject } from './editProject';
+import { handleDeleteProject } from './deleteProject';
 import allProjectsMarkup from './renderProjects';
 
 export default function render() {
   const contentDiv = document.querySelector('#content');
   const header = createHeader();
-  const modal = createModal();
+  const addModal = addProjectModal();
+  const delModal = deleteProjectModal();
 
   const wrapperDiv = document.createElement('div');
   setAttributes(wrapperDiv, { class: 'row', id: 'projects-wrapper' });
 
-  contentDiv.append(modal, header, wrapperDiv);
+  contentDiv.append(delModal, header, addModal, wrapperDiv );
   addProject();
-
   handleUpdateProject();
+  handleDeleteProject();
   allProjectsMarkup(projects);
 }

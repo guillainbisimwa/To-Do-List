@@ -1,5 +1,6 @@
 import displayProject from '../components/projectComponent';
 import editProject from './editProject';
+import deleteProject from './deleteProject';
 
 function cleanProjectsDisplay() {
   const projectsWrapper = document.querySelector('#projects-wrapper');
@@ -15,5 +16,6 @@ export default function allProjectsMarkup(projects) {
     const markup = displayProject(projIndex, proj);
     projectsWrapper.appendChild(markup);
     editProject();
+    deleteProject();
   });
 }
