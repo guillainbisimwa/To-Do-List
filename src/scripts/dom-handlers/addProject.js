@@ -23,8 +23,8 @@ function handleGeneratingNewInstance() {
 
     modal.hide();
     allProjectsMarkup(projects);
-    //editProject();
-    //render();
+    // editProject();
+    // render();
   } else {
     projectTitleInput.className = 'form-control is-invalid was-validated';
   }

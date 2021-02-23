@@ -5,14 +5,14 @@ import setAttributes from '../setAttributes';
 function handleDeletingProject(event) {
   const deleteElement = event.currentTarget;
   const correspondingIndex = deleteElement.dataset.index;
-  
+
   const title = document.querySelector('#project-title-confirm');
   title.innerHTML = `Do you want to delete "${projects[correspondingIndex].title}"?`;
 
   const deleteBtn = document.querySelector('#delBtn');
   setAttributes(deleteBtn, {
     'data-index': correspondingIndex,
-  });  
+  });
 }
 
 export default function deleteProject() {
@@ -22,9 +22,9 @@ export default function deleteProject() {
   });
 }
 
-export function handleDeleteProject(){
+export function handleDeleteProject() {
   const deleteBtn = document.querySelector('#delBtn');
-  console.log("Delete project");
+  console.log('Delete project');
   deleteBtn.addEventListener('click', (event) => {
     const deleteElement = event.currentTarget;
     const correspondingIndex = deleteElement.dataset.index;

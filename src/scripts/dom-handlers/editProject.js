@@ -32,14 +32,14 @@ export default function editProject() {
   });
 }
 
-export function handleUpdateProject(){
+export function handleUpdateProject() {
   const updateBtn = document.querySelector('#update-btn');
   updateBtn.addEventListener('click', (event) => {
     const editElement = event.currentTarget;
     const correspondingIndex = editElement.dataset.index;
 
     const newTitle = document.querySelector('#project-title-input');
-  
+
     projects[correspondingIndex].title = newTitle.value;
     allProjectsMarkup(projects);
 

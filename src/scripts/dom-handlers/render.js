@@ -15,7 +15,7 @@ export default function render() {
   const wrapperDiv = document.createElement('div');
   setAttributes(wrapperDiv, { class: 'row', id: 'projects-wrapper' });
 
-  contentDiv.append(delModal, header, addModal, wrapperDiv );
+  contentDiv.append(delModal, header, addModal, wrapperDiv);
   addProject();
   handleUpdateProject();
   handleDeleteProject();
