@@ -1,6 +1,7 @@
 import newProject from '../project';
 import render from './render';
-// import { editProject } from './editProject';
+import { editProject } from './editProject';
+import allProjectsMarkup from './renderProjects';
 
 const projects = [];
 
@@ -15,15 +16,15 @@ function handleGeneratingNewInstance() {
   if (projectTitleInput.value.trim().length > 1) {
     const newProjectInstance = newProject(projectTitleInput.value);
     projects.push(newProjectInstance);
-    // cleanForm([projectTitleInput]);
+    cleanForm([projectTitleInput]);
 
     const myModalEl = document.getElementById('addProject');
     const modal = bootstrap.Modal.getInstance(myModalEl);
 
     modal.hide();
-    // allProjectsMarkup(projects);
-    // // editProject();
-    render();
+    allProjectsMarkup(projects);
+    //editProject();
+    //render();
   } else {
     projectTitleInput.className = 'form-control is-invalid was-validated';
   }

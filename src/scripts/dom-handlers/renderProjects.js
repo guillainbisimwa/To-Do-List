@@ -14,6 +14,6 @@ export default function allProjectsMarkup(projects) {
     const projIndex = projects.indexOf(proj);
     const markup = displayProject(projIndex, proj);
     projectsWrapper.appendChild(markup);
-    // editProject();
+    editProject();
   });
 }
