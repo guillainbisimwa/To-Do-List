@@ -10,7 +10,6 @@ function handleEditingProject(event) {
   const myModalEl = document.getElementById('addProject');
   const modal = bootstrap.Modal.getInstance(myModalEl);
   
-
   // Modify the title as well as the placeholder text
   const header = document.querySelector('#exMl');
   header.innerHTML = 'Edit Project';

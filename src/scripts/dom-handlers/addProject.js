@@ -31,6 +31,15 @@ function handleGeneratingNewInstance() {
 }
 
 function handleAddingProject() {
+  const updateBtn = document.querySelector('#update-btn');
+  const saveBtn = document.querySelector('#save-btn');
+  updateBtn.classList.add('hide');
+  saveBtn.classList.remove('hide');
+  const newTitle = document.querySelector('#project-title-input');
+  newTitle.value = '';
+
+  const header = document.querySelector('#exMl');
+  header.innerHTML = 'Add Project';
   const saveChangesBtn = document.querySelector('#save-btn');
   saveChangesBtn.addEventListener('click', handleGeneratingNewInstance);
 }

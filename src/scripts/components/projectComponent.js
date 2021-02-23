@@ -38,7 +38,7 @@ export default function displayProject(projectId, project) {
 
   const modalDeleteIcon = document.createElement('a');
   setAttributes(modalDeleteIcon, {
-    class: 'text-light c-pointer', 'data-bs-toggle': 'modal', 'data-bs-target': '#deleteProject',
+    class: 'text-light c-pointer deleteProject', id: `deleteProject-${projectId}`, 'data-index': projectId,
   });
 
   const editIcon = document.createElement('i');
