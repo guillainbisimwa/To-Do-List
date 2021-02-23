@@ -2,7 +2,7 @@ import createHeader from '../components/headerComponent';
 import createModal from '../components/modalComponent';
 import setAttributes from '../setAttributes';
 import { projects, addProject } from './addProject';
-import { editProject, updateProject } from './editProject';
+import { editProject, handleUpdateProject } from './editProject';
 import allProjectsMarkup from './renderProjects';
 
 export default function render() {
@@ -15,6 +15,6 @@ export default function render() {
 
   contentDiv.append(header, modal, wrapperDiv);
   addProject();
-  updateProject();
+  handleUpdateProject();
   allProjectsMarkup(projects);
 }

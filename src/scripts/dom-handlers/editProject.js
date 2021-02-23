@@ -25,6 +25,7 @@ function handleEditingProject(event) {
   newTitle.value = projects[correspondingIndex].title;
 
   modal.show();
+
 }
 
 export default function editProject() {
