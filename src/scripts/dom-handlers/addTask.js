@@ -13,6 +13,13 @@ function handleAddingTask(event) {
 
   cleanForm([title, description, priority, date]);
 
+  const header = document.querySelector('#exMlTask');
+  header.innerHTML = 'Add Task';
+  const updateBtn = document.querySelector('#update-btn-task');
+  const saveBtn = document.querySelector('#save-btn-task');
+  updateBtn.classList.add('hide');
+  saveBtn.classList.remove('hide');
+
   // Get values from the modal
   const addTaskBtn = document.querySelector('#save-btn-task');
   setAttributes(addTaskBtn, { 'data-parentindex': targetProjectIndex });
@@ -53,4 +60,4 @@ function handleAdd() {
   });
 }
 
-export { handleAdd, addTask };
+export { handleAdd, addTask, taskPriority };

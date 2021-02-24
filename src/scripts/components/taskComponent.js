@@ -1,6 +1,6 @@
 import setAttributes from '../setAttributes';
 
-export default function displayTask(taskId, taskTitle, taskDetails, taskDate, taskPriority) {
+export default function displayTask(projectId, taskId, taskTitle, taskDetails, taskDate, taskPriority) {
   const wrapperTask = document.createElement('div');
   wrapperTask.className = 'mt-3';
 
@@ -20,12 +20,12 @@ export default function displayTask(taskId, taskTitle, taskDetails, taskDate, ta
 
   const modalEditIcon = document.createElement('a');
   setAttributes(modalEditIcon, {
-    class: 'text-light c-pointer', 'data-bs-toggle': 'modal', 'data-bs-target': '#addProject',
+    class: 'text-light c-pointer editTask', 'data-index': taskId, 'data-index-project': projectId //'data-bs-toggle': 'modal', 'data-bs-target': '#addTask',
   });
 
   const modalDeleteIcon = document.createElement('a');
   setAttributes(modalDeleteIcon, {
-    class: 'text-light c-pointer', 'data-bs-toggle': 'modal', 'data-bs-target': '#deleteProject',
+    class: 'text-light c-pointer deleteTask', 'data-index': taskId, 'data-index-project': projectId //'data-bs-toggle': 'modal', 'data-bs-target': '#deleteTask',
   });
 
   const editIcon = document.createElement('i');

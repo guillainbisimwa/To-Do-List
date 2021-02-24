@@ -1,14 +1,14 @@
 import setAttributes from '../setAttributes';
 import displayTask from './taskComponent';
 
-function allProjectTasks(tasksList) {
+function allProjectTasks(projectId, tasksList) {
   const tasksContainer = document.createElement('div');
   // console.log(tasksList);
   tasksList.forEach(task => {
     const {
       title, description, priority, date,
     } = task;
-    const markup = displayTask(tasksList.indexOf(task), title, description, date, priority);
+    const markup = displayTask(projectId, tasksList.indexOf(task), title, description, date, priority);
     tasksContainer.appendChild(markup);
   });
   return tasksContainer;
@@ -52,7 +52,7 @@ export default function displayProject(projectId, project) {
 
   // Append tasks here
   // console.log(project.tasksList);
-  const allTasks = allProjectTasks(project.tasksList);
+  const allTasks = allProjectTasks(projectId, project.tasksList);
 
   projectBody.appendChild(allTasks);
 
