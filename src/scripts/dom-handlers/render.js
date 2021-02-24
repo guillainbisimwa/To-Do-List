@@ -1,5 +1,6 @@
 import createHeader from '../components/headerComponent';
 import { deleteProjectModal, addProjectModal } from '../components/modalComponent';
+import { addTaskModal, deleteTaskModal } from '../components/taskModalComponent';
 import setAttributes from '../setAttributes';
 import { projects, addProject } from './addProject';
 import { handleUpdateProject } from './editProject';
@@ -12,11 +13,13 @@ export default function render() {
   const header = createHeader();
   const addModal = addProjectModal();
   const delModal = deleteProjectModal();
+  const modalAddTask = addTaskModal();
+  const modalDeleteTask = deleteTaskModal();
 
   const wrapperDiv = document.createElement('div');
   setAttributes(wrapperDiv, { class: 'row', id: 'projects-wrapper' });
 
-  contentDiv.append(delModal, header, addModal, wrapperDiv);
+  contentDiv.append(delModal, header, addModal, modalAddTask, modalDeleteTask, wrapperDiv);
   addProject();
   handleUpdateProject();
   handleDeleteProject();

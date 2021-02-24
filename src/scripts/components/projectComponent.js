@@ -8,7 +8,7 @@ function allProjectTasks(tasksList) {
     const {
       title, description, priority, date,
     } = task;
-    const markup = displayTask(title, description, priority, date);
+    const markup = displayTask(tasksList.indexOf(task), title, description, date, priority);
     tasksContainer.appendChild(markup);
   });
   return tasksContainer;

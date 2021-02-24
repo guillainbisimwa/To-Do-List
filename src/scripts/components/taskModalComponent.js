@@ -33,7 +33,7 @@ export function addTaskModal() {
 
   const selectTask = document.createElement('select');
   setAttributes(selectTask, {
-    class: 'form-control mb-3', id: 'task-select', 'aria-label': 'Choose your priority'
+    class: 'form-control mb-3', id: 'task-select', 'aria-label': 'Choose your priority',
   });
 
   // const optionMessage = document.createElement('option');
@@ -43,22 +43,22 @@ export function addTaskModal() {
 
   const optionLow = document.createElement('option');
   setAttributes(optionLow, {
-    value: '1'
+    value: '1',
   });
 
   const optionMedium = document.createElement('option');
   setAttributes(optionMedium, {
-    value: '2'
+    value: '2',
   });
 
   const optionHigh = document.createElement('option');
   setAttributes(optionHigh, {
-    value: '3'
+    value: '3',
   });
 
-  optionLow.textContent = "Low";
-  optionMedium.textContent = "Medium";
-  optionHigh.textContent = "High";
+  optionLow.textContent = 'Low';
+  optionMedium.textContent = 'Medium';
+  optionHigh.textContent = 'High';
 
   selectTask.append(optionLow, optionMedium, optionHigh);
 
@@ -88,9 +88,9 @@ export function addTaskModal() {
   const modalDialog = document.createElement('div');
   modalDialog.className = 'modal-dialog';
 
-  modalHeader.appendChild(titleHeader, btnHeader);
+  modalHeader.append(titleHeader, btnHeader);
 
-  modalBody.appendChild(inputTitleTask, textareaTask, selectTask, inputDateTask);
+  modalBody.append(inputTitleTask, textareaTask, selectTask, inputDateTask);
 
   modalFooter.append(btnClose, btnSave, btnUpdate);
 
@@ -103,10 +103,10 @@ export function addTaskModal() {
   return wrapperModal;
 }
 
-export function deleteTaskModal(){
+export function deleteTaskModal() {
   const wrapperModal = document.createElement('div');
   setAttributes(wrapperModal, {
-    class: 'modal fade', id: 'delTask', tabindex: '-1', 'aria-labelledby': 'exMlDelTask', 'aria-hidden': 'true'
+    class: 'modal fade', id: 'delTask', tabindex: '-1', 'aria-labelledby': 'exMlDelTask', 'aria-hidden': 'true',
   });
 
   const modalHeader = document.createElement('div');
@@ -129,7 +129,7 @@ export function deleteTaskModal(){
     class: 'alert alert-danger', id: 'task-title-confirm', role: 'alert',
   });
 
-  confirmTitleTask.innerHTML = "Do you want to delete this task?";
+  confirmTitleTask.innerHTML = 'Do you want to delete this task?';
 
   const modalFooter = document.createElement('div');
   modalFooter.className = 'modal-footer';

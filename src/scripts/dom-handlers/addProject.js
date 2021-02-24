@@ -49,4 +49,4 @@ function addProject() {
   addProjectBtn.addEventListener('click', handleAddingProject);
 }
 
-export { addProject, projects };
+export { addProject, projects, cleanForm };
