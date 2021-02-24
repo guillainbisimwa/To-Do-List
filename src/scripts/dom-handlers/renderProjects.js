@@ -1,6 +1,7 @@
 import displayProject from '../components/projectComponent';
 import editProject from './editProject';
 import deleteProject from './deleteProject';
+import { addTask } from './addTask';
 
 function cleanProjectsDisplay() {
   const projectsWrapper = document.querySelector('#projects-wrapper');
@@ -17,5 +18,6 @@ export default function allProjectsMarkup(projects) {
     projectsWrapper.appendChild(markup);
     editProject();
     deleteProject();
+    addTask();
   });
 }

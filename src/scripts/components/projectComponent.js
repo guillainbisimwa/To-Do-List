@@ -61,7 +61,7 @@ export default function displayProject(projectId, project) {
 
   const btnAddTask = document.createElement('button');
   setAttributes(btnAddTask, {
-    class: 'btn btn-primary text-light shadow', type: 'button', id: 'save-task', 'data-bs-toggle': 'modal', 'data-bs-target': '#addTask',
+    class: 'btn btn-primary text-light shadow add-task', type: 'button', id: 'save-task', 'data-bs-toggle': 'modal', 'data-bs-target': '#addTask', 'data-projectindex': projectId,
   });
   btnAddTask.innerHTML = 'Add task';
 

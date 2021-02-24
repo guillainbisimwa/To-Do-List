@@ -5,6 +5,7 @@ import { projects, addProject } from './addProject';
 import { handleUpdateProject } from './editProject';
 import { handleDeleteProject } from './deleteProject';
 import allProjectsMarkup from './renderProjects';
+import { handleAdd } from './addTask';
 
 export default function render() {
   const contentDiv = document.querySelector('#content');
@@ -19,5 +20,6 @@ export default function render() {
   addProject();
   handleUpdateProject();
   handleDeleteProject();
+  handleAdd();
   allProjectsMarkup(projects);
 }

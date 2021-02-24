@@ -145,15 +145,18 @@
                       type="text"
                       class="form-control mb-3"
                       placeholder="Add the Task title here"
+                      id="task-title"
                     />
                     <textarea
                       class="form-control mb-3"
                       rows="3"
                       placeholder="Add details here"
+                      id="task-description"
                     ></textarea>
                     <select
                       class="form-select mb-3"
                       aria-label="Choose your priority"
+                      id="task-priority"
                     >
                       <option selected>Choose your priority</option>
                       <option value="1">Low</option>
@@ -164,6 +167,7 @@
                       type="date"
                       class="form-control mb-3"
                       placeholder="Add the date"
+                      id="task-date"
                     />
                   </div>
                   <div class="modal-footer">
@@ -174,7 +178,7 @@
                     >
                       Close
                     </button>
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" class="btn btn-primary" id="add-task-btn">
                       Save task
                     </button>
                   </div>

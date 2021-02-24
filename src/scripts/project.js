@@ -6,6 +6,7 @@ export default function newProject(title) {
   function addTask(title, descr, priority, date) {
     const task = newTask(title, descr, priority, date);
     tasksList.push(task);
+    return 'hey';
   }
 
   function deleteTask(index) {

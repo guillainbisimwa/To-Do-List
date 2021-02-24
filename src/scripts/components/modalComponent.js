@@ -1,6 +1,5 @@
 import setAttributes from '../setAttributes';
 
-
 export function addProjectModal() {
   const wrapperModal = document.createElement('div');
   setAttributes(wrapperModal, {
@@ -63,10 +62,10 @@ export function addProjectModal() {
   return wrapperModal;
 }
 
-export function deleteProjectModal(){
+export function deleteProjectModal() {
   const wrapperModal = document.createElement('div');
   setAttributes(wrapperModal, {
-    class: 'modal fade', id: 'delProject', tabindex: '-1', 'aria-labelledby': 'exMlDel', 'aria-hidden': 'true'
+    class: 'modal fade', id: 'delProject', tabindex: '-1', 'aria-labelledby': 'exMlDel', 'aria-hidden': 'true',
   });
 
   const modalHeader = document.createElement('div');
@@ -89,7 +88,7 @@ export function deleteProjectModal(){
     class: 'alert alert-danger', id: 'project-title-confirm', role: 'alert',
   });
 
-  confirmTitleProject.innerHTML = "Do you want to delete this project?";
+  confirmTitleProject.innerHTML = 'Do you want to delete this project?';
 
   const modalFooter = document.createElement('div');
   modalFooter.className = 'modal-footer';
