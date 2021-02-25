@@ -20,12 +20,12 @@ export default function displayTask(projectId, taskId, taskTitle, taskDetails, t
 
   const modalEditIcon = document.createElement('a');
   setAttributes(modalEditIcon, {
-    class: 'text-light c-pointer editTask', 'data-index': taskId, 'data-index-project': projectId //'data-bs-toggle': 'modal', 'data-bs-target': '#addTask',
+    class: 'text-light c-pointer editTask', 'data-index': taskId, 'data-index-project': projectId,
   });
 
   const modalDeleteIcon = document.createElement('a');
   setAttributes(modalDeleteIcon, {
-    class: 'text-light c-pointer deleteTask', 'data-index': taskId, 'data-index-project': projectId //'data-bs-toggle': 'modal', 'data-bs-target': '#deleteTask',
+    class: 'text-light c-pointer deleteTask', 'data-index': taskId, 'data-index-project': projectId,'data-bs-toggle': 'modal', 'data-bs-target': '#delTask',
   });
 
   const editIcon = document.createElement('i');
