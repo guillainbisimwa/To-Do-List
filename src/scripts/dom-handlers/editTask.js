@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable import/no-cycle */
 import { projects } from './addProject';
 import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';
@@ -23,7 +25,7 @@ function handleEditingTask(event) {
   header.innerHTML = 'Edit Task';
   const updateBtn = document.querySelector('#update-btn-task');
   setAttributes(updateBtn, {
-    'data-index': correspondIndex, 'data-index-project': correspondPrjctIndex
+    'data-index': correspondIndex, 'data-index-project': correspondPrjctIndex,
   });
   const saveBtn = document.querySelector('#save-btn-task');
   saveBtn.classList.add('hide');
@@ -33,10 +35,12 @@ function handleEditingTask(event) {
   const description = document.querySelector('#task-textarea');
   const priority = document.querySelector('#task-select');
   const date = document.querySelector('#task-date-input');
-  
+
   title.value = projects[correspondPrjctIndex].tasksList[correspondIndex].title;
   description.value = projects[correspondPrjctIndex].tasksList[correspondIndex].description;
-  priority.value = convertTaskPriority(projects[correspondPrjctIndex].tasksList[correspondIndex].priority);
+  priority.value = convertTaskPriority(
+    projects[correspondPrjctIndex].tasksList[correspondIndex].priority,
+  );
   date.value = projects[correspondPrjctIndex].tasksList[correspondIndex].date;
 
   modal.show();
@@ -60,9 +64,9 @@ export function handleUpdateTask() {
     const description = document.querySelector('#task-textarea').value;
     const priority = taskPriority(document.querySelector('#task-select').value);
     const date = document.querySelector('#task-date-input').value;
- 
+
     projects[correspondPrjctIndex].editTask(correspondIndex, title, description, priority, date);
-    
+
     allProjectsMarkup(projects);
 
     const myModalEl = document.getElementById('addTask');
