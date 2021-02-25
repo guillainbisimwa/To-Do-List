@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable import/no-cycle */
 import newProject from '../project';
 import allProjectsMarkup from './renderProjects';
 

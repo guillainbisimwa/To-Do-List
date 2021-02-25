@@ -8,7 +8,7 @@ import { handleDeleteProject } from './deleteProject';
 import allProjectsMarkup from './renderProjects';
 import { handleAdd } from './addTask';
 import { handleUpdateTask } from './editTask';
-import { handleDeleteTask }  from './deleteTask';
+import { handleDeleteTask } from './deleteTask';
 
 export default function render() {
   const contentDiv = document.querySelector('#content');
