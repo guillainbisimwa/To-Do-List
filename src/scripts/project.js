@@ -19,7 +19,6 @@ export default function newProject(title) {
       title, description, priority, date,
     };
     task = { ...editedTask };
-    //return task;
     tasksList[index] = task;
   }
 

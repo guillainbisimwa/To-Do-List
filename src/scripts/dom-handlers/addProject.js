@@ -1,6 +1,4 @@
 import newProject from '../project';
-import render from './render';
-import { editProject } from './editProject';
 import allProjectsMarkup from './renderProjects';
 
 const projects = [newProject('Default Project')];
