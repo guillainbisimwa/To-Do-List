@@ -19,7 +19,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://raw.githack.com/guillainbisimwa/To-Do-List/tree/dom_manipulation)
+[Live Demo Link](http://gbisimwa.me/To-Do-List/)
 
 ## Getting Started
 
