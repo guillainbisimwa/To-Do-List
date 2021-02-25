@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import displayProject from '../components/projectComponent';
 import editProject from './editProject';
 import deleteProject from './deleteProject';

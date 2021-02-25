@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable import/no-cycle */
 import { projects } from './addProject';
 import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';

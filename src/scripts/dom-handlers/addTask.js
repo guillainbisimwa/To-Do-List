@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable import/no-cycle */
 import { projects, cleanForm } from './addProject';
 import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';

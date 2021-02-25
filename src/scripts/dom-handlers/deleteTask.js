@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable import/no-cycle */
 import { projects } from './addProject';
 import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';
@@ -13,7 +15,7 @@ function handleDeletingTask(event) {
 
   const deleteBtn = document.querySelector('#delBtnTask');
   setAttributes(deleteBtn, {
-    'data-index': correspondingIndex, 'data-index-project': correspondPrjctIndex
+    'data-index': correspondingIndex, 'data-index-project': correspondPrjctIndex,
   });
 }
 
@@ -25,18 +27,14 @@ export default function deleteTask() {
 }
 
 export function handleDeleteTask() {
-
   const deleteBtn = document.querySelector('#delBtnTask');
   deleteBtn.addEventListener('click', (event) => {
     const deleteElement = event.currentTarget;
     const correspondingIndex = deleteElement.dataset.index;
     const correspondPrjctIndex = deleteElement.dataset.indexProject;
 
-    //projects[correspondPrjctIndex].tasksList.splice(correspondingIndex, 1);
+    // projects[correspondPrjctIndex].tasksList.splice(correspondingIndex, 1);
     projects[correspondPrjctIndex].deleteTask(correspondingIndex);
-    console.log(projects[correspondPrjctIndex].tasksList);
-    console.log("Test");
-
 
     allProjectsMarkup(projects);
 

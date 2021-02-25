@@ -1,6 +1,13 @@
 import setAttributes from '../setAttributes';
 
-export default function displayTask(projectId, taskId, taskTitle, taskDetails, taskDate, taskPriority) {
+export default function displayTask(
+  projectId,
+  taskId,
+  taskTitle,
+  taskDetails,
+  taskDate,
+  taskPriority,
+) {
   const wrapperTask = document.createElement('div');
   wrapperTask.className = 'mt-3';
 
@@ -25,7 +32,7 @@ export default function displayTask(projectId, taskId, taskTitle, taskDetails, t
 
   const modalDeleteIcon = document.createElement('a');
   setAttributes(modalDeleteIcon, {
-    class: 'text-light c-pointer deleteTask', 'data-index': taskId, 'data-index-project': projectId,'data-bs-toggle': 'modal', 'data-bs-target': '#delTask',
+    class: 'text-light c-pointer deleteTask', 'data-index': taskId, 'data-index-project': projectId, 'data-bs-toggle': 'modal', 'data-bs-target': '#delTask',
   });
 
   const editIcon = document.createElement('i');
@@ -58,14 +65,14 @@ export default function displayTask(projectId, taskId, taskTitle, taskDetails, t
 
   const collapseBtn = document.createElement('button');
   setAttributes(collapseBtn, {
-    class: 'btn btn-secondary btn-sm', 'data-bs-toggle':'collapse', 'href': `#collapse${taskId}${projectId}`, 'role':'button', 'aria-expanded':'false', 'aria-controls':`collapse${taskId}${projectId}`,
+    class: 'btn btn-secondary btn-sm', 'data-bs-toggle': 'collapse', href: `#collapse${taskId}${projectId}`, role: 'button', 'aria-expanded': 'false', 'aria-controls': `collapse${taskId}${projectId}`,
   });
 
-  collapseBtn.textContent = "See details";
+  collapseBtn.textContent = 'See details';
 
   const collapse = document.createElement('div');
   setAttributes(collapse, {
-    class: 'collapse', id: `collapse${taskId}${projectId}`
+    class: 'collapse', id: `collapse${taskId}${projectId}`,
   });
 
   const collapseBody = document.createElement('div');
