@@ -3,12 +3,17 @@ import displayTask from './taskComponent';
 
 function allProjectTasks(projectId, tasksList) {
   const tasksContainer = document.createElement('div');
-  // console.log(tasksList);
+
   tasksList.forEach(task => {
     const {
       title, description, priority, date,
     } = task;
-    const markup = displayTask(projectId, tasksList.indexOf(task), title, description, date, priority);
+    const markup = displayTask(projectId,
+      tasksList.indexOf(task),
+      title,
+      description,
+      date,
+      priority);
     tasksContainer.appendChild(markup);
   });
   return tasksContainer;

@@ -3,7 +3,7 @@ import render from './render';
 import { editProject } from './editProject';
 import allProjectsMarkup from './renderProjects';
 
-const projects = [];
+const projects = [newProject('Default Project')];
 
 function cleanForm(elts = []) {
   elts.forEach(elt => {
