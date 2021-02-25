@@ -3,6 +3,7 @@ import editProject from './editProject';
 import deleteProject from './deleteProject';
 import { addTask } from './addTask';
 import editTask from './editTask';
+import deleteTask from './deleteTask';
 
 function cleanProjectsDisplay() {
   const projectsWrapper = document.querySelector('#projects-wrapper');
@@ -21,5 +22,6 @@ export default function allProjectsMarkup(projects) {
     deleteProject();
     addTask();
     editTask();
+    deleteTask();
   });
 }

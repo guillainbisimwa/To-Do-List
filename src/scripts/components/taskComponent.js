@@ -20,12 +20,12 @@ export default function displayTask(projectId, taskId, taskTitle, taskDetails, t
 
   const modalEditIcon = document.createElement('a');
   setAttributes(modalEditIcon, {
-    class: 'text-light c-pointer editTask', 'data-index': taskId, 'data-index-project': projectId //'data-bs-toggle': 'modal', 'data-bs-target': '#addTask',
+    class: 'text-light c-pointer editTask', 'data-index': taskId, 'data-index-project': projectId,
   });
 
   const modalDeleteIcon = document.createElement('a');
   setAttributes(modalDeleteIcon, {
-    class: 'text-light c-pointer deleteTask', 'data-index': taskId, 'data-index-project': projectId //'data-bs-toggle': 'modal', 'data-bs-target': '#deleteTask',
+    class: 'text-light c-pointer deleteTask', 'data-index': taskId, 'data-index-project': projectId,'data-bs-toggle': 'modal', 'data-bs-target': '#delTask',
   });
 
   const editIcon = document.createElement('i');
@@ -51,52 +51,32 @@ export default function displayTask(projectId, taskId, taskTitle, taskDetails, t
 
   date.append(dateSmall);
 
-  const accordionWrapper = document.createElement('div');
-  setAttributes(accordionWrapper, {
-    class: 'accordion accordion-flush', id: `acc${taskId}`, 'data-index': taskId,
+  const collapseWrapper = document.createElement('div');
+  setAttributes(collapseWrapper, {
+    class: 'row p-2',
   });
 
-  const accordionItem = document.createElement('div');
-  accordionItem.className = 'ccordion-item';
-
-  const accordionTitle = document.createElement('h2');
-  setAttributes(accordionTitle, {
-    class: 'accordion-header', id: `flush-heading${taskId}`,
+  const collapseBtn = document.createElement('button');
+  setAttributes(collapseBtn, {
+    class: 'btn btn-secondary btn-sm', 'data-bs-toggle':'collapse', 'href': `#collapse${taskId}${projectId}`, 'role':'button', 'aria-expanded':'false', 'aria-controls':`collapse${taskId}${projectId}`,
   });
 
-  const accordionButton = document.createElement('button');
-  setAttributes(accordionButton, {
-    class: 'accordion-button collapsed', type: 'button', 'data-bs-toggle': 'collapse', 'data-bs-target': `#flush-collapse${taskId}`, 'aria-expanded': 'false', 'aria-controls': `flush-collapse${taskId}`,
-  });
-  accordionButton.textContent = 'See more';
+  collapseBtn.textContent = "See details";
 
-  const accordionFlushCollapse = document.createElement('div');
-  setAttributes(accordionFlushCollapse, {
-    id: `flush-collapse${taskId}`, class: 'accordion-collapse collapse pt-3', 'aria-labelledby': `flush-heading${taskId}`, 'data-bs-parent': `acc${taskId}`,
+  const collapse = document.createElement('div');
+  setAttributes(collapse, {
+    class: 'collapse', id: `collapse${taskId}${projectId}`
   });
 
-  const hereWeCanAddItems = document.createElement('div');
-  hereWeCanAddItems.className = 'row';
+  const collapseBody = document.createElement('div');
+  setAttributes(collapseBody, {
+    class: 'p-2',
+  });
 
-  const addItemWrapper = document.createElement('div');
-  addItemWrapper.className = 'mt-2';
+  collapseBody.appendChild(details);
 
-  const addItemIcon = document.createElement('i');
-  addItemIcon.className = 'fas fa-plus';
-
-  const addItemText = document.createElement('a');
-  addItemText.className = 'btn-link';
-  addItemText.textContent = 'Add item';
-
-  addItemWrapper.append(addItemIcon, addItemText);
-
-  accordionFlushCollapse.append(hereWeCanAddItems, addItemWrapper);
-
-  accordionTitle.appendChild(accordionButton);
-
-  accordionItem.append(accordionTitle, accordionFlushCollapse);
-
-  accordionWrapper.appendChild(accordionItem);
+  collapse.appendChild(collapseBody);
+  collapseWrapper.append(collapseBtn, collapse);
 
   modalEditIcon.appendChild(editIcon);
 
@@ -106,7 +86,7 @@ export default function displayTask(projectId, taskId, taskTitle, taskDetails, t
 
   cardTaskTitleWrapper.append(cardTaskTitle, wripperIcons);
 
-  cardTaskBody.append(cardTaskTitleWrapper, priority, details, date, accordionWrapper);
+  cardTaskBody.append(cardTaskTitleWrapper, priority, date, collapseWrapper);
 
   cardTask.appendChild(cardTaskBody);
 

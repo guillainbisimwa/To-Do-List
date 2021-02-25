@@ -139,7 +139,7 @@ export function deleteTaskModal() {
   btnClose.innerHTML = 'Close';
 
   const btnDelete = document.createElement('button');
-  setAttributes(btnDelete, { class: 'btn btn-danger', type: 'button', id: 'delBtn' });
+  setAttributes(btnDelete, { class: 'btn btn-danger', type: 'button', id: 'delBtnTask' });
   btnDelete.innerHTML = 'Delete task';
 
   const modalContent = document.createElement('div');

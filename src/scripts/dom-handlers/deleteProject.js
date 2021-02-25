@@ -24,11 +24,9 @@ export default function deleteProject() {
 
 export function handleDeleteProject() {
   const deleteBtn = document.querySelector('#delBtn');
-  console.log('Delete project');
   deleteBtn.addEventListener('click', (event) => {
     const deleteElement = event.currentTarget;
     const correspondingIndex = deleteElement.dataset.index;
-    console.log(correspondingIndex);
 
     projects.splice(correspondingIndex, 1);
 
