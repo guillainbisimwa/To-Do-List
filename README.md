@@ -4,7 +4,7 @@
 
 > This project was built as part of the Microverse JavaScript module. The goal of the project is to build a simple Todo App using Webpack and ES6 by dynamically creating the DOM elements.
 
-![screenshot]()
+![screenshot](https://github.com/guillainbisimwa/To-Do-List/blob/dom_manipulation/src/img/Todolist.gif)
 
 Additional description about the project and its features.
 
