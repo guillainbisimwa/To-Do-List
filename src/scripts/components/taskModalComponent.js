@@ -36,11 +36,6 @@ const addTaskModal = () => {
     class: 'form-control mb-3', id: 'task-select', 'aria-label': 'Choose your priority',
   });
 
-  // const optionMessage = document.createElement('option');
-  // setAttributes(optionMessage, {
-  //   selected: 'true'
-  // });
-
   const optionLow = document.createElement('option');
   setAttributes(optionLow, {
     value: '1',
