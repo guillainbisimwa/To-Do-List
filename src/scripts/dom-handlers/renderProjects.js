@@ -1,10 +1,10 @@
 /* eslint-disable import/no-cycle */
 import displayProject from '../components/projectComponent';
-import editProject from './editProject';
-import deleteProject from './deleteProject';
+import { editProject } from './editProject';
+import { deleteProject } from './deleteProject';
 import { addTask } from './addTask';
-import editTask from './editTask';
-import deleteTask from './deleteTask';
+import { editTask } from './editTask';
+import { deleteTask } from './deleteTask';
 
 const cleanProjectsDisplay = () => {
   const projectsWrapper = document.querySelector('#projects-wrapper');
@@ -25,6 +25,7 @@ const allProjectsMarkup = projects => {
     editTask();
     deleteTask();
   });
+  console.log(localStorage.getItem('projects'));
 };
 
 export default allProjectsMarkup;

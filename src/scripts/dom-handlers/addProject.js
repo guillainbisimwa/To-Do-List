@@ -3,7 +3,7 @@
 import newProject from '../project';
 import allProjectsMarkup from './renderProjects';
 
-const projects = [newProject('Default Project')];
+const projects = JSON.parse(localStorage.getItem('projects'));
 
 const cleanForm = (elts = []) => {
   elts.forEach(elt => {
@@ -15,7 +15,12 @@ const handleGeneratingNewInstance = () => {
   const projectTitleInput = document.querySelector('#project-title-input');
   if (projectTitleInput.value.trim().length > 1) {
     const newProjectInstance = newProject(projectTitleInput.value);
-    projects.push(newProjectInstance);
+    let prjs = [];
+    prjs = JSON.parse(localStorage.getItem('projects'));
+    prjs.push(newProjectInstance);
+    localStorage.removeItem('projects');
+    localStorage.setItem('projects', JSON.stringify(prjs));
+    console.log(localStorage.getItem('projects'));
     cleanForm([projectTitleInput]);
 
     const myModalEl = document.getElementById('addProject');
