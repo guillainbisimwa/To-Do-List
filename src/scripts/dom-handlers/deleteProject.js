@@ -4,7 +4,7 @@ import { projects } from './addProject';
 import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';
 
-function handleDeletingProject(event) {
+const handleDeletingProject = (event) => {
   const deleteElement = event.currentTarget;
   const correspondingIndex = deleteElement.dataset.index;
 
@@ -15,16 +15,16 @@ function handleDeletingProject(event) {
   setAttributes(deleteBtn, {
     'data-index': correspondingIndex,
   });
-}
+};
 
-export default function deleteProject() {
+const deleteProject = () => {
   const deleteProjectBtn = document.querySelectorAll('.deleteProject');
   deleteProjectBtn.forEach(delPrjct => {
     delPrjct.addEventListener('click', handleDeletingProject);
   });
-}
+};
 
-export function handleDeleteProject() {
+const handleDeleteProject = () => {
   const deleteBtn = document.querySelector('#delBtn');
   deleteBtn.addEventListener('click', (event) => {
     const deleteElement = event.currentTarget;
@@ -38,4 +38,6 @@ export function handleDeleteProject() {
     const modal = bootstrap.Modal.getInstance(myModalDel);
     modal.hide();
   });
-}
+};
+
+export { deleteProject, handleDeleteProject };

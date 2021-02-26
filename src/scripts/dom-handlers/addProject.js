@@ -5,13 +5,13 @@ import allProjectsMarkup from './renderProjects';
 
 const projects = [newProject('Default Project')];
 
-function cleanForm(elts = []) {
+const cleanForm = (elts = []) => {
   elts.forEach(elt => {
     elt.value = '';
   });
-}
+};
 
-function handleGeneratingNewInstance() {
+const handleGeneratingNewInstance = () => {
   const projectTitleInput = document.querySelector('#project-title-input');
   if (projectTitleInput.value.trim().length > 1) {
     const newProjectInstance = newProject(projectTitleInput.value);
@@ -28,9 +28,9 @@ function handleGeneratingNewInstance() {
   } else {
     projectTitleInput.className = 'form-control is-invalid was-validated';
   }
-}
+};
 
-function handleAddingProject() {
+const handleAddingProject = () => {
   const updateBtn = document.querySelector('#update-btn');
   const saveBtn = document.querySelector('#save-btn');
   updateBtn.classList.add('hide');
@@ -42,11 +42,11 @@ function handleAddingProject() {
   header.innerHTML = 'Add Project';
   const saveChangesBtn = document.querySelector('#save-btn');
   saveChangesBtn.addEventListener('click', handleGeneratingNewInstance);
-}
+};
 
-function addProject() {
+const addProject = () => {
   const addProjectBtn = document.querySelector('#add-project-btn');
   addProjectBtn.addEventListener('click', handleAddingProject);
-}
+};
 
 export { addProject, projects, cleanForm };

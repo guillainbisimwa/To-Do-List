@@ -1,6 +1,6 @@
 import setAttributes from '../setAttributes';
 
-export function addTaskModal() {
+const addTaskModal = () => {
   const wrapperModal = document.createElement('div');
   setAttributes(wrapperModal, {
     class: 'modal fade', id: 'addTask', tabindex: '-1', 'aria-labelledby': 'exMlTask', 'aria-hidden': 'true',
@@ -101,9 +101,9 @@ export function addTaskModal() {
   wrapperModal.appendChild(modalDialog);
 
   return wrapperModal;
-}
+};
 
-export function deleteTaskModal() {
+const deleteTaskModal = () => {
   const wrapperModal = document.createElement('div');
   setAttributes(wrapperModal, {
     class: 'modal fade', id: 'delTask', tabindex: '-1', 'aria-labelledby': 'exMlDelTask', 'aria-hidden': 'true',
@@ -161,4 +161,6 @@ export function deleteTaskModal() {
   wrapperModal.appendChild(modalDialog);
 
   return wrapperModal;
-}
+};
+
+export { addTaskModal, deleteTaskModal };

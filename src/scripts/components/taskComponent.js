@@ -1,13 +1,13 @@
 import setAttributes from '../setAttributes';
 
-export default function displayTask(
+const displayTask = (
   projectId,
   taskId,
   taskTitle,
   taskDetails,
   taskDate,
   taskPriority,
-) {
+) => {
   const wrapperTask = document.createElement('div');
   wrapperTask.className = 'mt-3';
 
@@ -100,4 +100,6 @@ export default function displayTask(
   wrapperTask.appendChild(cardTask);
 
   return wrapperTask;
-}
+};
+
+export default displayTask;

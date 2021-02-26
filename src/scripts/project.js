@@ -1,6 +1,6 @@
 import newTask from './task';
 
-export default function newProject(title) {
+const newProject = title => {
   const tasksList = [];
 
   function addTask(title, descr, priority, date) {
@@ -29,4 +29,6 @@ export default function newProject(title) {
     deleteTask,
     editTask,
   };
-}
+};
+
+export default newProject;

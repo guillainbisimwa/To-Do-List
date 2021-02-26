@@ -1,4 +1,4 @@
-export default function newTask(title, description, priority, date) {
+const newTask = (title, description, priority, date) => {
   const checkList = [];
 
   function addItem(item) {
@@ -18,4 +18,6 @@ export default function newTask(title, description, priority, date) {
     addItem,
     deleteItem,
   };
-}
+};
+
+export default newTask;

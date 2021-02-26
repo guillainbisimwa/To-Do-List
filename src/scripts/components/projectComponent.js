@@ -1,7 +1,7 @@
 import setAttributes from '../setAttributes';
 import displayTask from './taskComponent';
 
-function allProjectTasks(projectId, tasksList) {
+const allProjectTasks = (projectId, tasksList) => {
   const tasksContainer = document.createElement('div');
 
   tasksList.forEach(task => {
@@ -17,9 +17,9 @@ function allProjectTasks(projectId, tasksList) {
     tasksContainer.appendChild(markup);
   });
   return tasksContainer;
-}
+};
 
-export default function displayProject(projectId, project) {
+const displayProject = (projectId, project) => {
   const wrapperProject = document.createElement('div');
   setAttributes(wrapperProject, {
     class: 'col-xs-12 col-sm-6 col-md-4 pt-5', id: `project-${projectId}`, 'data-index': projectId,
@@ -84,4 +84,6 @@ export default function displayProject(projectId, project) {
   wrapperProject.appendChild(card);
 
   return wrapperProject;
-}
+};
+
+export default displayProject;

@@ -4,7 +4,7 @@ import { projects } from './addProject';
 import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';
 
-function handleDeletingTask(event) {
+const handleDeletingTask = (event) => {
   const deleteElement = event.currentTarget;
   const correspondingIndex = deleteElement.dataset.index;
   const correspondPrjctIndex = deleteElement.dataset.indexProject;
@@ -17,16 +17,16 @@ function handleDeletingTask(event) {
   setAttributes(deleteBtn, {
     'data-index': correspondingIndex, 'data-index-project': correspondPrjctIndex,
   });
-}
+};
 
-export default function deleteTask() {
+const deleteTask = () => {
   const deleteTaskBtn = document.querySelectorAll('.deleteTask');
   deleteTaskBtn.forEach(delTask => {
     delTask.addEventListener('click', handleDeletingTask);
   });
-}
+};
 
-export function handleDeleteTask() {
+const handleDeleteTask = () => {
   const deleteBtn = document.querySelector('#delBtnTask');
   deleteBtn.addEventListener('click', (event) => {
     const deleteElement = event.currentTarget;
@@ -42,4 +42,6 @@ export function handleDeleteTask() {
     const modal = bootstrap.Modal.getInstance(myModalDel);
     modal.hide();
   });
-}
+};
+
+export { deleteTask, handleDeleteTask };

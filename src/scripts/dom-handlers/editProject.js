@@ -4,7 +4,7 @@ import { projects } from './addProject';
 import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';
 
-function handleEditingProject(event) {
+const handleEditingProject = (event) => {
   const editElement = event.currentTarget;
   const correspondingIndex = editElement.dataset.index;
 
@@ -25,16 +25,16 @@ function handleEditingProject(event) {
   newTitle.value = projects[correspondingIndex].title;
 
   modal.show();
-}
+};
 
-export default function editProject() {
+const editProject = () => {
   const editProjectBtn = document.querySelectorAll('.editProject');
   editProjectBtn.forEach(editPrjct => {
     editPrjct.addEventListener('click', handleEditingProject);
   });
-}
+};
 
-export function handleUpdateProject() {
+const handleUpdateProject = () => {
   const updateBtn = document.querySelector('#update-btn');
   updateBtn.addEventListener('click', (event) => {
     const editElement = event.currentTarget;
@@ -49,4 +49,6 @@ export function handleUpdateProject() {
     const modal = bootstrap.Modal.getInstance(myModalEl);
     modal.hide();
   });
-}
+};
+
+export { editProject, handleUpdateProject };

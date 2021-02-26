@@ -4,7 +4,7 @@ import { projects, cleanForm } from './addProject';
 import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';
 
-function handleAddingTask(event) {
+const handleAddingTask = (event) => {
   const target = event.currentTarget;
   const targetProjectIndex = target.dataset.projectindex;
 
@@ -25,23 +25,23 @@ function handleAddingTask(event) {
   // Get values from the modal
   const addTaskBtn = document.querySelector('#save-btn-task');
   setAttributes(addTaskBtn, { 'data-parentindex': targetProjectIndex });
-}
+};
 
-function addTask() {
+const addTask = () => {
   const addTaskBtns = document.querySelectorAll('.add-task');
   addTaskBtns.forEach(btn => {
     btn.addEventListener('click', handleAddingTask);
   });
-}
+};
 
-function taskPriority(priorityLevel) {
+const taskPriority = (priorityLevel) => {
   if (priorityLevel === '1') { return 'Low'; }
   if (priorityLevel === '2') { return 'Medium'; }
   if (priorityLevel === '3') { return 'High'; }
   return priorityLevel;
-}
+};
 
-function handleAdd() {
+const handleAdd = () => {
   const addTaskBtn = document.querySelector('#save-btn-task');
 
   addTaskBtn.addEventListener('click', () => {
@@ -60,6 +60,6 @@ function handleAdd() {
 
     modalInstance.hide();
   });
-}
+};
 
 export { handleAdd, addTask, taskPriority };

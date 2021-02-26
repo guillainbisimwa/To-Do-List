@@ -1,6 +1,6 @@
 import setAttributes from '../setAttributes';
 
-export function addProjectModal() {
+const addProjectModal = () => {
   const wrapperModal = document.createElement('div');
   setAttributes(wrapperModal, {
     class: 'modal fade', id: 'addProject', tabindex: '-1', 'aria-labelledby': 'exMl', 'aria-hidden': 'true',
@@ -60,9 +60,9 @@ export function addProjectModal() {
   wrapperModal.appendChild(modalDialog);
 
   return wrapperModal;
-}
+};
 
-export function deleteProjectModal() {
+const deleteProjectModal = () => {
   const wrapperModal = document.createElement('div');
   setAttributes(wrapperModal, {
     class: 'modal fade', id: 'delProject', tabindex: '-1', 'aria-labelledby': 'exMlDel', 'aria-hidden': 'true',
@@ -120,4 +120,6 @@ export function deleteProjectModal() {
   wrapperModal.appendChild(modalDialog);
 
   return wrapperModal;
-}
+};
+
+export { addProjectModal, deleteProjectModal };

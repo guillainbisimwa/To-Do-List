@@ -6,12 +6,12 @@ import { addTask } from './addTask';
 import editTask from './editTask';
 import deleteTask from './deleteTask';
 
-function cleanProjectsDisplay() {
+const cleanProjectsDisplay = () => {
   const projectsWrapper = document.querySelector('#projects-wrapper');
   projectsWrapper.innerHTML = '';
-}
+};
 
-export default function allProjectsMarkup(projects) {
+const allProjectsMarkup = projects => {
   const projectsWrapper = document.querySelector('#projects-wrapper');
   cleanProjectsDisplay();
 
@@ -25,4 +25,6 @@ export default function allProjectsMarkup(projects) {
     editTask();
     deleteTask();
   });
-}
+};
+
+export default allProjectsMarkup;

@@ -10,7 +10,7 @@ import { handleAdd } from './addTask';
 import { handleUpdateTask } from './editTask';
 import { handleDeleteTask } from './deleteTask';
 
-export default function render() {
+const render = () => {
   const contentDiv = document.querySelector('#content');
   const header = createHeader();
   const addModal = addProjectModal();
@@ -29,4 +29,6 @@ export default function render() {
   handleDeleteTask();
   handleAdd();
   allProjectsMarkup(projects);
-}
+};
+
+export default render;

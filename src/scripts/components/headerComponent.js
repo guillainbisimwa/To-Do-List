@@ -1,6 +1,6 @@
 import setAttributes from '../setAttributes';
 
-export default function createHeader() {
+const createHeader = () => {
   const wrapperDiv = document.createElement('header');
   const h2 = document.createElement('h2');
   const addProjectButton = document.createElement('button');
@@ -17,4 +17,6 @@ export default function createHeader() {
   wrapperDiv.append(h2, addProjectButton);
 
   return wrapperDiv;
-}
+};
+
+export default createHeader;

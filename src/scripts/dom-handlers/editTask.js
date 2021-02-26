@@ -5,14 +5,14 @@ import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';
 import { taskPriority } from './addTask';
 
-function convertTaskPriority(priorityName) {
+const convertTaskPriority = (priorityName) => {
   if (priorityName === 'Low') { return '1'; }
   if (priorityName === 'Medium') { return '2'; }
   if (priorityName === 'High') { return '3'; }
   return 0;
-}
+};
 
-function handleEditingTask(event) {
+const handleEditingTask = event => {
   const editElement = event.currentTarget;
   const correspondIndex = editElement.dataset.index;
   const correspondPrjctIndex = editElement.dataset.indexProject;
@@ -44,16 +44,16 @@ function handleEditingTask(event) {
   date.value = projects[correspondPrjctIndex].tasksList[correspondIndex].date;
 
   modal.show();
-}
+};
 
-export default function editTask() {
+const editTask = () => {
   const editTaskBtn = document.querySelectorAll('.editTask');
   editTaskBtn.forEach(editTaskElement => {
     editTaskElement.addEventListener('click', handleEditingTask);
   });
-}
+};
 
-export function handleUpdateTask() {
+const handleUpdateTask = () => {
   const updateBtn = document.querySelector('#update-btn-task');
   updateBtn.addEventListener('click', (event) => {
     const editElement = event.currentTarget;
@@ -73,4 +73,6 @@ export function handleUpdateTask() {
     const modal = bootstrap.Modal.getInstance(myModalEl);
     modal.hide();
   });
-}
+};
+
+export { editTask, handleUpdateTask };
