@@ -13,23 +13,24 @@ const cleanForm = (elts = []) => {
 
 const handleGeneratingNewInstance = () => {
   const projectTitleInput = document.querySelector('#project-title-input');
+
   if (projectTitleInput.value.trim().length > 1) {
     const newProjectInstance = newProject(projectTitleInput.value);
     let prjs = [];
+
     prjs = JSON.parse(localStorage.getItem('projects'));
     prjs.push(newProjectInstance);
     localStorage.removeItem('projects');
     localStorage.setItem('projects', JSON.stringify(prjs));
     console.log(localStorage.getItem('projects'));
+
     cleanForm([projectTitleInput]);
 
     const myModalEl = document.getElementById('addProject');
     const modal = bootstrap.Modal.getInstance(myModalEl);
-
     modal.hide();
-    allProjectsMarkup(projects);
-    // editProject();
-    // render();
+
+    allProjectsMarkup(JSON.parse(localStorage.getItem('projects')));
   } else {
     projectTitleInput.className = 'form-control is-invalid was-validated';
   }
