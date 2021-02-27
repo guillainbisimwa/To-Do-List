@@ -31,7 +31,8 @@ const handleDeleteProject = () => {
     const correspondingIndex = deleteElement.dataset.index;
 
     projects.splice(correspondingIndex, 1);
-
+    localStorage.removeItem('projects');
+    localStorage.setItem('projects', JSON.stringify(projects));
     allProjectsMarkup(projects);
 
     const myModalDel = document.getElementById('delProject');
