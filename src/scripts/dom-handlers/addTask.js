@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable import/no-cycle */
 import { projects, cleanForm } from './addProject';
+import newTask from '../task';
 import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';
 
@@ -53,9 +54,11 @@ const handleAdd = () => {
     const modal = document.querySelector('#addTask');
     const modalInstance = bootstrap.Modal.getInstance(modal);
     const targetProject = projects[addTaskBtn.dataset.parentindex];
+    console.log(targetProject);
 
-    targetProject.addTask(title, description, priority, date);
-
+    targetProject.tasksList.push(newTask(title, description, priority, date));
+    localStorage.removeItem('projects');
+    localStorage.setItem('projects', JSON.stringify(projects));
     allProjectsMarkup(projects);
 
     modalInstance.hide();

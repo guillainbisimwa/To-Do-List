@@ -22,7 +22,6 @@ const handleGeneratingNewInstance = () => {
     prjs.push(newProjectInstance);
     localStorage.removeItem('projects');
     localStorage.setItem('projects', JSON.stringify(prjs));
-    console.log(localStorage.getItem('projects'));
 
     cleanForm([projectTitleInput]);
 
