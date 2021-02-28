@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 /* eslint-disable import/no-cycle */
-import { projects } from './addProject';
 import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';
 import { taskPriority } from './addTask';
@@ -36,12 +35,13 @@ const handleEditingTask = event => {
   const priority = document.querySelector('#task-select');
   const date = document.querySelector('#task-date-input');
 
-  title.value = projects[correspondPrjctIndex].tasksList[correspondIndex].title;
-  description.value = projects[correspondPrjctIndex].tasksList[correspondIndex].description;
+  const prjs = JSON.parse(localStorage.getItem('projects'));
+  title.value = prjs[correspondPrjctIndex].tasksList[correspondIndex].title;
+  description.value = prjs[correspondPrjctIndex].tasksList[correspondIndex].description;
   priority.value = convertTaskPriority(
-    projects[correspondPrjctIndex].tasksList[correspondIndex].priority,
+    prjs[correspondPrjctIndex].tasksList[correspondIndex].priority,
   );
-  date.value = projects[correspondPrjctIndex].tasksList[correspondIndex].date;
+  date.value = prjs[correspondPrjctIndex].tasksList[correspondIndex].date;
 
   modal.show();
 };
@@ -64,10 +64,16 @@ const handleUpdateTask = () => {
     const description = document.querySelector('#task-textarea').value;
     const priority = taskPriority(document.querySelector('#task-select').value);
     const date = document.querySelector('#task-date-input').value;
+    const prjs = JSON.parse(localStorage.getItem('projects'));
+    const projectOfInterest = prjs[correspondPrjctIndex];
+    const newTaskDetails = {
+      title, description, priority, date,
+    };
+    projectOfInterest.tasksList[correspondIndex] = newTaskDetails;
 
-    projects[correspondPrjctIndex].editTask(correspondIndex, title, description, priority, date);
-
-    allProjectsMarkup(projects);
+    localStorage.removeItem('projects');
+    localStorage.setItem('projects', JSON.stringify(prjs));
+    allProjectsMarkup(JSON.parse(localStorage.getItem('projects')));
 
     const myModalEl = document.getElementById('addTask');
     const modal = bootstrap.Modal.getInstance(myModalEl);
