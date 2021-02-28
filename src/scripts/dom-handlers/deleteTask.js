@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 /* eslint-disable import/no-cycle */
-import { projects } from './addProject';
 import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';
 
@@ -10,8 +9,8 @@ const handleDeletingTask = (event) => {
   const correspondPrjctIndex = deleteElement.dataset.indexProject;
 
   const title = document.querySelector('#task-title-confirm');
-
-  title.innerHTML = `Do you want to delete "${projects[correspondPrjctIndex].tasksList[correspondingIndex].title}"?`;
+  const prjs = JSON.parse(localStorage.getItem('projects'));
+  title.innerHTML = `Do you want to delete "${prjs[correspondPrjctIndex].tasksList[correspondingIndex].title}"?`;
 
   const deleteBtn = document.querySelector('#delBtnTask');
   setAttributes(deleteBtn, {
@@ -32,14 +31,15 @@ const handleDeleteTask = () => {
     const deleteElement = event.currentTarget;
     const correspondingIndex = deleteElement.dataset.index;
     const correspondPrjctIndex = deleteElement.dataset.indexProject;
-
-    // projects[correspondPrjctIndex].tasksList.splice(correspondingIndex, 1);
-    projects[correspondPrjctIndex].deleteTask(correspondingIndex);
-
-    allProjectsMarkup(projects);
+    const prjs = JSON.parse(localStorage.getItem('projects'));
+    prjs[correspondPrjctIndex].tasksList.splice(correspondingIndex, 1);
+    localStorage.removeItem('projects');
+    localStorage.setItem('projects', JSON.stringify(prjs));
+    allProjectsMarkup(JSON.parse(localStorage.getItem('projects')));
 
     const myModalDel = document.getElementById('delTask');
     const modal = bootstrap.Modal.getInstance(myModalDel);
+
     modal.hide();
   });
 };

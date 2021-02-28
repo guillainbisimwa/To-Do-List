@@ -25,7 +25,6 @@ const allProjectsMarkup = projects => {
     editTask();
     deleteTask();
   });
-  console.log(localStorage.getItem('projects'));
 };
 
 export default allProjectsMarkup;

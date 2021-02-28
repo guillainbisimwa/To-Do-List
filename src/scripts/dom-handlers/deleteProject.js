@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 /* eslint-disable import/no-cycle */
-import { projects } from './addProject';
 import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';
 
@@ -9,7 +8,8 @@ const handleDeletingProject = (event) => {
   const correspondingIndex = deleteElement.dataset.index;
 
   const title = document.querySelector('#project-title-confirm');
-  title.innerHTML = `Do you want to delete "${projects[correspondingIndex].title}"?`;
+  const prjs = JSON.parse(localStorage.getItem('projects'));
+  title.innerHTML = `Do you want to delete "${prjs[correspondingIndex].title}"?`;
 
   const deleteBtn = document.querySelector('#delBtn');
   setAttributes(deleteBtn, {
@@ -29,11 +29,12 @@ const handleDeleteProject = () => {
   deleteBtn.addEventListener('click', (event) => {
     const deleteElement = event.currentTarget;
     const correspondingIndex = deleteElement.dataset.index;
+    const prjs = JSON.parse(localStorage.getItem('projects'));
 
-    projects.splice(correspondingIndex, 1);
+    prjs.splice(correspondingIndex, 1);
     localStorage.removeItem('projects');
-    localStorage.setItem('projects', JSON.stringify(projects));
-    allProjectsMarkup(projects);
+    localStorage.setItem('projects', JSON.stringify(prjs));
+    allProjectsMarkup(JSON.parse(localStorage.getItem('projects')));
 
     const myModalDel = document.getElementById('delProject');
     const modal = bootstrap.Modal.getInstance(myModalDel);
