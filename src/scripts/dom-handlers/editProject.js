@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 /* eslint-disable import/no-cycle */
-import { projects } from './addProject';
 import allProjectsMarkup from './renderProjects';
 import setAttributes from '../setAttributes';
 
@@ -22,7 +21,8 @@ const handleEditingProject = (event) => {
   saveBtn.classList.add('hide');
   updateBtn.classList.remove('hide');
   const newTitle = document.querySelector('#project-title-input');
-  newTitle.value = projects[correspondingIndex].title;
+  const prjs = localStorage.getItem('projects');
+  newTitle.value = prjs[correspondingIndex].title;
 
   modal.show();
 };
@@ -41,9 +41,11 @@ const handleUpdateProject = () => {
     const correspondingIndex = editElement.dataset.index;
 
     const newTitle = document.querySelector('#project-title-input');
-
-    projects[correspondingIndex].title = newTitle.value;
-    allProjectsMarkup(projects);
+    const prjs = localStorage.getItem('projects');
+    prjs[correspondingIndex].title = newTitle.value;
+    localStorage.removeItem('projects');
+    localStorage.setItem('projects', JSON.stringify(prjs));
+    allProjectsMarkup(JSON.parse(localStorage.getItem('projects')));
 
     const myModalEl = document.getElementById('addProject');
     const modal = bootstrap.Modal.getInstance(myModalEl);
