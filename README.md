@@ -16,6 +16,7 @@ Additional description about the project and its features.
 - JavaScript
 - Babel
 - Webpack
+- localStorage
 
 ## Live Demo
 
