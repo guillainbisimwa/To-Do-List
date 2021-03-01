@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.bg-test {
+  background: #f8f9fa;
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
