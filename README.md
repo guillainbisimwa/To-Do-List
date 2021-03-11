@@ -17,6 +17,7 @@ Additional description about the project and its features.
 - Babel
 - Webpack
 - localStorage
+- Integration Tests using [Jest](https://jestjs.io/)
 
 ## Live Demo
 

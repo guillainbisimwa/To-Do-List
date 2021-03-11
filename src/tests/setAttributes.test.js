@@ -25,3 +25,10 @@ test('It adds the id "my-id" and the class "my-class" to the img element', () =>
   expect(elt.id).toBe('my-id');
   expect(elt.className).toBe('my-class');
 });
+
+test('It adds the type "button" to the button element', () => {
+  const elt = document.createElement('button');
+  setAttributes(elt, { type: 'button' });
+  expect(elt.type).toBe('button');
+  expect(elt.type).not.toBe('input');
+});
