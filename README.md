@@ -17,6 +17,7 @@ Additional description about the project and its features.
 - Babel
 - Webpack
 - localStorage
+- Integration Tests using [Jest](https://jestjs.io/)
 
 ## Live Demo
 
@@ -34,6 +35,15 @@ $ npm install
 ```
 
 After running the previous commands, to see the web application in the browser go to the `To-Do-List` folder and open the `index.html` file inside `dist` folder.
+
+## Test
+
+To run the integration Tests locally using [Jest](https://jestjs.io/), just type the following commands over the terminal in Linux or Mac or the Windows cmd console:
+
+```s
+$ npm run test
+
+```
 
 ## Authors
 
