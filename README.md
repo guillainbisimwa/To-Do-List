@@ -37,7 +37,7 @@ After running the previous commands, to see the web application in the browser g
 
 ## Test
 
-To run the test locally, just type the following commands over the terminal in Linux or Mac or the Windows cmd console:
+To run the integration Tests locally using [Jest](https://jestjs.io/), just type the following commands over the terminal in Linux or Mac or the Windows cmd console:
 
 ```s
 $ npm run test
